@@ -11,12 +11,18 @@
 ## Unrolling a sphere
 A sphere is not developable, so it has to be cut into pieces and/or approximated. Six approaches, all for R = 100 mm, laid out next to the reference sphere. Every piece has 8 mm glue tabs (`tabWidth` on each code atom) on exactly one edge of every mating pair: glue each tab under the plain edge it meets.
 
+**Scoring:** each tab's fold line is perforated with 3 mm x 0.3 mm slots spaced 15 mm apart (`scoreSlots` dash/gap/margin/width in each code atom). The slots stop 1.5 mm short of both ends of the tab, so they never meet the cut outline and the tab stays attached when the scores are cut.
+
 1. **Orange Peel Gores (analytic)** - 12 sine-shaped gores. Width at arc distance s from the equator = 2*pi*R*cos(s/R)/12, so meridians and parallels are true length; the paper stretches slightly at the gore edges. *Tabs:* 5 short tabs on each gore's right edge; glue under the left edge of the next gore. Change `gores`/`tabs` in the Gore code atom.
 2. **Gore via MeshUnroll** - the real spherical lune flattened numerically by crv.MeshUnroll (same tool as the cone test). Open the crv.MeshUnroll atom to see the strain heat-map. Result (312.3 x 52.3) matches method 1 (314.2 x 52.4). *Tabs:* on the first half of each edge (south half of one side, north half of the other) so neighbouring gores' tabs interleave.
 3. **Latitude Bands (Cones)** - the sphere approximated by 4 cone frustums per hemisphere, each developed exactly into an annular sector (directly following the cone test), plus a flat polar disc. Make 2 of each (north + south). *Tabs:* a seam tab on each band's right end closes it into a cone; short tabs on each band's inner (upper) arc glue under the outer edge of the next band up, or under the polar disc. The equator band has tabs on every other slot of its outer arc: line up the seams of the north and south equator bands and their tabs land in each other's gaps.
 4. **Faceted Gores (Exact Fold)** - gores of a latitude/longitude polyhedron (12 gores x 12 rings). Every facet is a flat trapezoid, so it folds up with zero stretch: crease straight across between each pair of outline corners. *Tabs:* one per facet on the right edge; glue under the next gore's left edge.
 5. **Icosahedron Net** - single-piece net of 20 equilateral triangles with vertices on the sphere. Fold every edge between triangles. *Tabs:* on the right edge of every top and bottom cap (glue under the next cap round the pole) and on the right end of the strip (glue under the left end).
-6. **Cube-Sphere Patches via MeshUnroll** - the sphere split into 6 identical panels (sphere seen through the faces of a cube), each flattened by crv.MeshUnroll; the heat-map shows the most distortion at the panel corners. *Tabs:* on the first half of every edge (pinwheel), so any panel edge can be glued to any other and the tabs always interleave.
+6. **Cube-Sphere Patches via MeshUnroll** - the sphere split into 6 identical panels (sphere seen through the faces of a cube), each flattened by crv.MeshUnroll; the heat-map shows the most distortion at the panel corners. *Tabs:* on the first half of every edge (pinwheel), so any panel edge can be glued to any other and the tabs always interleave. 
+
+![readme](/readmeid-1426.svg?v=n2jxsvj)
+
+
 
 
 
