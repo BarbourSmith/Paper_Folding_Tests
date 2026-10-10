@@ -1213,7 +1213,7 @@
             {
               "atomType": "Assembly",
               "x": 0.7,
-              "y": 0.8,
+              "y": 0.4,
               "uniqueID": "id-706",
               "ioValues": [
                 {
@@ -1233,6 +1233,23 @@
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
+            },
+            {
+              "atomType": "Fusion",
+              "x": 0.7,
+              "y": 0.7,
+              "uniqueID": "id-940",
+              "ioValues": [
+                {
+                  "name": "Shape 1",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape2",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "unionType": "Fusion"
             }
           ],
           "allConnectors": [
@@ -1240,6 +1257,11 @@
               "ap2Name": "Shape2",
               "ap1ID": "id-697",
               "ap2ID": "id-706"
+            },
+            {
+              "ap2Name": "Shape2",
+              "ap1ID": "id-697",
+              "ap2ID": "id-940"
             },
             {
               "ap2Name": "geometry",
@@ -1257,8 +1279,13 @@
               "ap2ID": "id-706"
             },
             {
+              "ap2Name": "Shape 1",
+              "ap1ID": "id-700",
+              "ap2ID": "id-940"
+            },
+            {
               "ap2Name": "number or geometry",
-              "ap1ID": "id-706",
+              "ap1ID": "id-940",
               "ap2ID": "id-696"
             }
           ],
