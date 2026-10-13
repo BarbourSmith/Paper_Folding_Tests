@@ -7,6 +7,56 @@
   "topLevel": true,
   "allAtoms": [
     {
+      "atomType": "Move",
+      "x": 0.6,
+      "y": 0.4,
+      "uniqueID": "id-2388",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": -50,
+          "currentEquation": "-50"
+        },
+        {
+          "name": "yDist",
+          "ioValue": 200,
+          "currentEquation": "200"
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0
+        }
+      ]
+    },
+    {
+      "atomType": "Assembly",
+      "x": 0.7,
+      "y": 0.6,
+      "uniqueID": "id-2394",
+      "ioValues": [
+        {
+          "name": "makeDisjoint",
+          "ioValue": false
+        },
+        {
+          "name": "Shape 1",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Shape2",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Shape3",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
       "atomType": "Output",
       "x": 1,
       "y": 0.5,
@@ -3474,9 +3524,24 @@
   ],
   "allConnectors": [
     {
+      "ap2Name": "Shape 1",
+      "ap1ID": "id-2388",
+      "ap2ID": "id-2394"
+    },
+    {
       "ap2Name": "number or geometry",
-      "ap1ID": "id-647",
+      "ap1ID": "id-2394",
       "ap2ID": "id-312"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-647",
+      "ap2ID": "id-2388"
+    },
+    {
+      "ap2Name": "Shape2",
+      "ap1ID": "id-916",
+      "ap2ID": "id-2394"
     }
   ],
   "unitsKey": "MM",
